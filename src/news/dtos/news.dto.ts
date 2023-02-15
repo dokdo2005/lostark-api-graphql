@@ -1,6 +1,6 @@
 import { Field, InputType } from '@nestjs/graphql';
 import { IsEnum, IsOptional, IsString } from 'class-validator';
-import { NewsNoticeType } from './news.constants';
+import { NewsNoticeType } from '../constants/news.constants';
 
 @InputType()
 export class NewsNoticeDto {

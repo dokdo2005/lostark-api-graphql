@@ -1,7 +1,7 @@
 import { Args, Query, Resolver } from '@nestjs/graphql';
 import { NewsService } from './news.service';
-import { NewsNoticeDto } from './news.dto';
-import { NewsEventModel, NewsNoticeModel } from './news.model';
+import { NewsNoticeDto } from './dtos/news.dto';
+import { NewsEventModel, NewsNoticeModel } from './models/news.model';
 
 @Resolver()
 export class NewsResolver {

@@ -1,6 +1,6 @@
 import { HttpService } from '@nestjs/axios';
 import { Injectable } from '@nestjs/common';
-import { NewsNoticeDto } from './news.dto';
+import { NewsNoticeDto } from './dtos/news.dto';
 import { firstValueFrom } from 'rxjs';
 
 @Injectable()
