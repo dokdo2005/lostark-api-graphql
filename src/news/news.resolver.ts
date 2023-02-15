@@ -1,6 +1,6 @@
 import { Args, Query, Resolver } from '@nestjs/graphql';
 import { NewsService } from './news.service';
-import { NewsEventDto, NewsNoticeDto } from './news.dto';
+import { NewsNoticeDto } from './news.dto';
 import { NewsEventModel, NewsNoticeModel } from './news.model';
 
 @Resolver()
@@ -15,9 +15,7 @@ export class NewsResolver {
   }
 
   @Query(() => [NewsEventModel])
-  async eventList(
-    @Args('parameters', { nullable: true }) parameters?: NewsEventDto,
-  ) {
-    return await this.newsService.getEventList(parameters);
+  async eventList() {
+    return await this.newsService.getEventList();
   }
 }

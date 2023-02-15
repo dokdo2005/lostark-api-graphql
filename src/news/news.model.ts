@@ -1,30 +1,27 @@
 import { Field, ObjectType } from '@nestjs/graphql';
 
 @ObjectType()
-export class NewsNoticeModel {
+class NewsCommonDto {
   @Field(() => String)
   Title: string;
 
   @Field(() => String)
-  Date: string;
-
-  @Field(() => String)
   Link: string;
+}
+
+@ObjectType()
+export class NewsNoticeModel extends NewsCommonDto {
+  @Field(() => String)
+  Date: string;
 
   @Field(() => String)
   Type: string;
 }
 
 @ObjectType()
-export class NewsEventModel {
-  @Field(() => String)
-  Title: string;
-
+export class NewsEventModel extends NewsCommonDto {
   @Field(() => String)
   Thumbnail: string;
-
-  @Field(() => String)
-  Link: string;
 
   @Field(() => String)
   StartDate: string;

@@ -4,15 +4,15 @@
 
 type NewsNoticeModel {
   Title: String!
-  Date: String!
   Link: String!
+  Date: String!
   Type: String!
 }
 
 type NewsEventModel {
   Title: String!
-  Thumbnail: String!
   Link: String!
+  Thumbnail: String!
   StartDate: String!
   EndDate: String!
   RewardDate: String!
@@ -20,15 +20,10 @@ type NewsEventModel {
 
 type Query {
   noticeList(parameters: NewsNoticeDto): [NewsNoticeModel!]!
-  eventList(parameters: NewsEventDto): [NewsEventModel!]!
+  eventList: [NewsEventModel!]!
 }
 
 input NewsNoticeDto {
-  limit: Float
   searchText: String
   type: String
-}
-
-input NewsEventDto {
-  limit: Float
 }
