@@ -1,4 +1,3 @@
-import { HttpModule } from '@nestjs/axios';
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { NewsModule } from './news/news.module';
@@ -11,11 +10,6 @@ import { join } from 'path';
     ConfigModule.forRoot({
       envFilePath: '.env',
       isGlobal: true,
-    }),
-    HttpModule.register({
-      headers: {
-        Authorization: `bearer ${process.env.LOSTARK_API_KEY}`,
-      },
     }),
     GraphQLModule.forRoot({
       driver: ApolloDriver,
